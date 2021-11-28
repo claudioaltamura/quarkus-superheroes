@@ -11,7 +11,7 @@ public class Superhero {
 	private Integer superheroId;
 
 	@NotEmpty
-	private String nane;
+	private String name;
 
 	private String realName;
 
@@ -23,12 +23,12 @@ public class Superhero {
 		this.superheroId = superheroId;
 	}
 
-	public String getNane() {
-		return nane;
+	public String getName() {
+		return name;
 	}
 
-	public void setNane(String nane) {
-		this.nane = nane;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getRealName() {
@@ -44,19 +44,19 @@ public class Superhero {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Superhero superhero = (Superhero) o;
-		return superheroId.equals(superhero.superheroId) && nane.equals(superhero.nane) && Objects.equals(realName, superhero.realName);
+		return superheroId.equals(superhero.superheroId) && name.equals(superhero.name) && Objects.equals(realName, superhero.realName);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(superheroId, nane, realName);
+		return Objects.hash(superheroId, name, realName);
 	}
 
 	@Override
 	public String toString() {
 		return "Superhero{" +
 				"superheroId=" + superheroId +
-				", nane='" + nane + '\'' +
+				", name='" + name + '\'' +
 				", realName='" + realName + '\'' +
 				'}';
 	}
