@@ -8,19 +8,19 @@ import javax.validation.constraints.Positive;
 public class Superhero {
 
 	@Positive
-	private Integer superheroId;
+	private Long id;
 
 	@NotEmpty
 	private String name;
 
 	private String realName;
 
-	public Integer getSuperheroId() {
-		return superheroId;
+	public Long getId() {
+		return id;
 	}
 
-	public void setSuperheroId(Integer superheroId) {
-		this.superheroId = superheroId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -44,18 +44,18 @@ public class Superhero {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Superhero superhero = (Superhero) o;
-		return superheroId.equals(superhero.superheroId) && name.equals(superhero.name) && Objects.equals(realName, superhero.realName);
+		return id.equals(superhero.id) && name.equals(superhero.name) && Objects.equals(realName, superhero.realName);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(superheroId, name, realName);
+		return Objects.hash(id, name, realName);
 	}
 
 	@Override
 	public String toString() {
 		return "Superhero{" +
-				"superheroId=" + superheroId +
+				"id=" + id +
 				", name='" + name + '\'' +
 				", realName='" + realName + '\'' +
 				'}';

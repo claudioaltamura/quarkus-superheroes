@@ -9,15 +9,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Positive;
 
 @Entity(name = "Superhero")
 @Table(name = "superhero")
 public class SuperheroEntity {
 
+	@Positive
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "superhero_id")
-	private Long superheroId;
+	@Column(name = "id", nullable = false)
+	private Long id;
 
 	@Column(name = "name")
 	@NotEmpty
@@ -26,12 +28,12 @@ public class SuperheroEntity {
 	@Column(name = "real_name")
 	private String realName;
 
-	public Long getSuperheroId() {
-		return superheroId;
+	public Long getId() {
+		return id;
 	}
 
-	public void setSuperheroId(Long superheroId) {
-		this.superheroId = superheroId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -55,18 +57,18 @@ public class SuperheroEntity {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		SuperheroEntity that = (SuperheroEntity) o;
-		return Objects.equals(superheroId, that.superheroId) && Objects.equals(name, that.name) && Objects.equals(realName, that.realName);
+		return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(realName, that.realName);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(superheroId, name, realName);
+		return Objects.hash(id, name, realName);
 	}
 
 	@Override
 	public String toString() {
 		return "SuperheroEntity{" +
-				"superheroId=" + superheroId +
+				"id=" + id +
 				", name='" + name + '\'' +
 				", realName='" + realName + '\'' +
 				'}';
