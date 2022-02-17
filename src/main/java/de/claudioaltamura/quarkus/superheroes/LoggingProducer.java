@@ -1,4 +1,4 @@
-package de.claudioaltamura;
+package de.claudioaltamura.quarkus.superheroes;
 
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;

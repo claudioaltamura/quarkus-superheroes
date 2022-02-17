@@ -1,4 +1,4 @@
-package de.claudioaltamura;
+package de.claudioaltamura.quarkus.superheroes;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
@@ -12,10 +12,9 @@ class SuperheroResourceTest {
     @Test
     void testHelloEndpoint() {
         given()
-          .when().get("/api/superheroes")
+          .when().get("/api/v1/superheroes")
           .then()
-             .statusCode(200)
-             .body(is("Hello RESTEasy"));
+             .statusCode(200);
     }
 
 }

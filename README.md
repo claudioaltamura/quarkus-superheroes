@@ -1,4 +1,4 @@
-# quarkus-superheroes project
+# quarkus-superheroes-example project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 

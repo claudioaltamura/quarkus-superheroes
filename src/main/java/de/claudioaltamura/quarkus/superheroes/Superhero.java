@@ -1,31 +1,16 @@
-package de.claudioaltamura;
+package de.claudioaltamura.quarkus.superheroes;
 
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Positive;
 
-@Entity(name = "Superhero")
-@Table(name = "superhero")
-public class SuperheroEntity {
+public class Superhero {
 
-	@Positive
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
 	private Long id;
 
-	@Column(name = "name")
 	@NotEmpty
 	private String name;
 
-	@Column(name = "real_name")
 	private String realName;
 
 	public Long getId() {
@@ -56,8 +41,8 @@ public class SuperheroEntity {
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
-		SuperheroEntity that = (SuperheroEntity) o;
-		return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(realName, that.realName);
+		Superhero superhero = (Superhero) o;
+		return id.equals(superhero.id) && name.equals(superhero.name) && Objects.equals(realName, superhero.realName);
 	}
 
 	@Override
@@ -67,7 +52,7 @@ public class SuperheroEntity {
 
 	@Override
 	public String toString() {
-		return "SuperheroEntity{" +
+		return "Superhero{" +
 				"id=" + id +
 				", name='" + name + '\'' +
 				", realName='" + realName + '\'' +

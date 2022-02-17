@@ -1,4 +1,4 @@
-package de.claudioaltamura;
+package de.claudioaltamura.quarkus.superheroes;
 
 import io.quarkus.test.junit.NativeImageTest;
 
