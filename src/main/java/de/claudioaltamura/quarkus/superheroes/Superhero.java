@@ -13,6 +13,14 @@ public class Superhero {
 
 	private String realName;
 
+	public Superhero() {}
+
+	public Superhero(Long id, String name, String realName) {
+		this.id = id;
+		this.name = name;
+		this.realName = realName;
+	}
+
 	public Long getId() {
 		return id;
 	}
